@@ -43,7 +43,6 @@ export class EditComponent implements OnInit {
     })
     //habilidat el boton de eliminar
     this.api.getAllReservBytour(this.id).subscribe(data=>{
-      console.log(data);
       if(data.length>0)this.hDel=true
     })
     console.log(this.hDel);

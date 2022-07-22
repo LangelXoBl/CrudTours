@@ -18,11 +18,11 @@
         <tr *ngFor="let tours of tours">
         <th scope="row">{{tours.idTour}}</th>
         <td>
-            <img src="{{tours.imgURL}}" class="img-thumbnail img-fluid">
+            <img src="{{tours.imgURL}}" class="refe">
         </td>
         <td>{{tours.nombre}}</td>
         <td>${{tours.precio}}</td>
-        <td>{{tours.descripcion}}</td>
+        <td ><p class="ellipsis">{{tours.descripcion}}</p></td>
         <td ><button type="button" class="btn btn-success" (click)="ediTour(tours.idTour)">Modificar</button></td>
         <td><button type="button" class="btn btn-info" (click)="verReservations(tours.idTour)">ver mas</button></td>
         </tr>
