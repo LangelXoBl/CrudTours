@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Reservas</h2><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Personas</th>
+        <th scope="col">Costo</th> 
+        <th scope="col">Inicio</th>
+        <th scope="col">Fin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reserva of reservas">
+        <th scope="row">{{reserva.idReserva}}</th>
+        <td>{{reserva.nombre_titular}}</td>
+        <td>{{reserva.correo_electronico}}</td>
+        <td>{{reserva.telefono}}</td>
+        <td>{{reserva.personas}}</td>
+        <td>${{reserva.precio}}</td>
+        <td>{{reserva.fecha_inicio}}</td>
+        <td>{{reserva.fecha_fin}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <button  class="btn btn-secondary m-1" (click)="salir()">Salir</button>
+</div>
+<br><br><br><br>

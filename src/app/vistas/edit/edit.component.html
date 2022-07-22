@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Editar tours</h2>
+    
+    <form [formGroup]="editForm" >
+        <div class="form-group row">
+            <div class="form-group col m-2">
+                <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nombre">
+                </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="form-label">Precio:</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="precio">
+                </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="form-label">Descripcion:</label>
+                    <textarea class="form-control" id="exampleFormControlInput1" rows="8" formControlName="descripcion"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary col m-2" (click)="PostForm(editForm.value)" (click)="recharge()">Guardar</button>
+                <button class="btn btn-danger m-2" (click)="deleteOne()" [disabled]="hDel">Eliminar</button>
+                <button  class="btn btn-secondary m-2" (click)="salir()">Salir</button>
+                <p>* El boton de "ELIMINAR" se desactivara cuando el tour tenga reservaciones activas.</p>
+            </div>
+            <div class="form-group col m-2">
+                <div class="form-group row ">
+                    <label for="exampleFormControlInput1" class="form-label">Imagen:</label>
+                    <img src="{{imagen}}" class="img-thumbnail img-fluid">
+                    <input type="hidden" class="form-control" id="exampleFormControlInput1" formControlName="imgURL">
+                </div>
+                <div class="mb-3 row">
+                    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                        <ngb-panel title="Cambiar imagen">
+                          <ng-template ngbPanelContent>
+                            <input class="form-control" type="file" id="formFile" (change)="captImg($event)">
+                          </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                  </div>
+            </div>
+        </div>
+    </form>
+</div>
+<br><br><br><br>

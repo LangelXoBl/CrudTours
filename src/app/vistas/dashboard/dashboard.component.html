@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Lista de tours</h2><br>
+    <button type="button" class="btn btn-primary" (click)="create()">Nuevo Tour</button>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Editar</th> 
+        <th scope="col">Reservaciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tours of tours">
+        <th scope="row">{{tours.idTour}}</th>
+        <td>
+            <img src="{{tours.imgURL}}" class="img-thumbnail img-fluid">
+        </td>
+        <td>{{tours.nombre}}</td>
+        <td>${{tours.precio}}</td>
+        <td>{{tours.descripcion}}</td>
+        <td ><button type="button" class="btn btn-success" (click)="ediTour(tours.idTour)">Modificar</button></td>
+        <td><button type="button" class="btn btn-info" (click)="verReservations(tours.idTour)">ver mas</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br><br><br><br>
